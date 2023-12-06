@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="/">Home</a></h1>
+    <h1><a href="/my_app/filters/">Filtering </a></h1>
+    
+    <h1>This is template filtering page</h1>
+
+    <h3> use of "join" : {{ list | join:" + "}}</h3>
+
+    <h2><u> Date Time : </u></h2>
+    <h3> use of "Date" : {{ times | date:"D d M Y"}}</h3>
+    <h3> use of "Date" : {{ times | date:"DATE_FORMAT"}}</h3>
+    <h3> use of "Date" : {{ times | date:"DATETIME_FORMAT"}}</h3>
+    <h3> use of "Date" : {{ times | date:"SHORT_DATE_FORMAT"}}</h3>
+    <h3> use of "Date" : {{ times | date:"SHORT_DATETIME_FORMAT"}}</h3>
+    <h3> use of "Date" : {{ times | date }}</h3>
+    <h3> use of "Time" : {{ times | time:"H:i" }}</h3>
+    <h3> use of "Time" : {{ times | time:"H\h i\m" }}</h3>
+
+    <h2><u>Timesince : </u></h2>
+    <h3> use of "timesince" : {{ custom_date | timesince }}</h3>
+    <h3> use of "timesince" : {{ custom_date2 | timesince:custom_date }}</h3>
+
+    <h2><u>Default : </u></h2>
+    <h3> use of "Default" : {{ string | default:"Empty string"}}</h3>
+
+    <h2><u>Add : </u></h2>
+    <h3> use of "Add" : {{ num | add:20 }}</h3>
+    <h3> use of "Add" : {{ string | add:"bangladesh"}}</h3>
+
+    <h2><u>Capfirst : </u></h2>
+    <h3> use of "Capfirst" : {{ name | capfirst }}</h3>
+
+    <h2><u>Cut : </u></h2>
+    <h3> use of "Cut" : {{ name | cut:'ra' }}</h3>
+
+    <h2><u>Dictsort : </u></h2>
+    <h3> use of "Dictsort" : {{ peoples | dictsort:'name' }}</h3>
+
+    <h2><u>Escape and striptags: </u></h2>
+    <h3> use of "Escape" : {{ '<p>Are you <i>still</i> here ? ! </p>' | escape }}</h3>
+    <h3> use of "striptags" : {{ '<p>Are you <i>still</i> here ? ! </p>' | striptags }}</h3>
+
+    <h2><u>first and last : </u></h2>
+    <h3> use of "first" : {{ list | first }}</h3>
+    <h3> use of "last" : {{ list | last }}</h3>
+    <h3> use of "first" : {{name | first }}</h3>
+    <h3> use of "last" : {{name | last }}</h3>
+
+    <h2><u>length : </u></h2>
+    <h3> use of "length" : {{ list | length }}</h3>
+    <h3> use of "length" : {{ name | length }}</h3>
+
+    <h2><u>lower upper title : </u></h2>
+    <h3> use of "lower" : {{ string2 | lower }}</h3>
+    <h3> use of "upper" : {{ string2 | upper }}</h3>
+    <h3> use of "Title" : {{ string2 | title }}</h3>
+
+    <h2><u>Random : </u></h2>
+    <h3> use of "random" : {{ string2 | random }}</h3>
+    <h3> use of "random" : {{ list | random }}</h3>
+
+    <h2><u>slice : </u></h2>
+    <h3> use of "slice" : {{ string2 | slice:":2" }}</h3>
+    <h3> use of "slice" : {{ list | slice:"2:" }}</h3>
+
+    <h2><u>Truncatechars and Truncatewords : </u></h2>
+    <h3> use of "Truncatechars" : {{ string2 | truncatechars:5 }}</h3>
+    <h3> use of "Truncatewords" : {{ string2 | truncatewords:1 }}</h3>
+
+    <h2><u>Wordcount : </u></h2>
+    <h3> use of "wordcount" : {{ string2 | wordcount }}</h3>
+
+    <h2><u>Pluralize : </u></h2>
+    <h3> use of "pularize" : {%if notification >= 1 %}
+                                {{ notification | pluralize:"new_notification" }}
+                            {% else %}
+                                notification
+                            {%endif%}
+    </h3>
+
+    <h2><u>Makelist: </u></h2>
+    <h3> use of "make_list" : {{ non_list | make_list }}</h3>
+
+    <h2><u>Divisibleby: </u></h2>
+    <h3> use of "divisibleby" : {{ num | divisibleby:"2" }}</h3>
+    
+    <h2><u>filesizeformat: </u></h2>
+    <h3> use of "filesizeformat" : {{ num | filesizeformat }}</h3>
+    <h3> use of "filesizeformat" : {{ num2 | filesizeformat }}</h3>
+
+</body>
+</html>
